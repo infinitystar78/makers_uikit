@@ -42,8 +42,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     
     @IBAction func saveRecipe(_ sender: Any) {
         
+        /*
         let newRecipe = Recipe(name: <#T##String#>, ingredients: <#T##String#>, timeToCook: timeToCookText, rating: <#T##String#>, instructions: <#T##String#>, photo: <#T##UIImage#>, portionSize: <#T##Int#>, nutritionalInformation: <#T##String#>, cuisine: <#T##Cuisine#>, date: <#T##Date#>)
-        
+        */
         
     }
     

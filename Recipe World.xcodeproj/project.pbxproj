@@ -148,8 +148,8 @@
 		CE5332DA29128FFC00E5A2BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CE5332B12912753800E5A2BD /* Assets.xcassets */,
 				CE5332B62912753800E5A2BD /* Info.plist */,
+				CE5332B12912753800E5A2BD /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -475,7 +475,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2D7L2MM5V3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Recipe World/Info.plist";
+				INFOPLIST_FILE = "Recipe World/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -503,7 +503,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2D7L2MM5V3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Recipe World/Info.plist";
+				INFOPLIST_FILE = "Recipe World/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
