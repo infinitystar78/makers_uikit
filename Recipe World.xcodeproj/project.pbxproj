@@ -16,6 +16,7 @@
 		CE5332C02912753800E5A2BD /* Recipe_WorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332BF2912753800E5A2BD /* Recipe_WorldTests.swift */; };
 		CE5332CA2912753800E5A2BD /* Recipe_WorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332C92912753800E5A2BD /* Recipe_WorldUITests.swift */; };
 		CE5332CC2912753800E5A2BD /* Recipe_WorldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332CB2912753800E5A2BD /* Recipe_WorldUITestsLaunchTests.swift */; };
+		CE5332DD2912903700E5A2BD /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332DC2912903700E5A2BD /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CE5332C52912753800E5A2BD /* Recipe WorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Recipe WorldUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5332C92912753800E5A2BD /* Recipe_WorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_WorldUITests.swift; sourceTree = "<group>"; };
 		CE5332CB2912753800E5A2BD /* Recipe_WorldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_WorldUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE5332DC2912903700E5A2BD /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,10 @@
 			children = (
 				CE5332A82912753500E5A2BD /* AppDelegate.swift */,
 				CE5332AA2912753500E5A2BD /* SceneDelegate.swift */,
-				CE5332AC2912753500E5A2BD /* ViewController.swift */,
-				CE5332AE2912753500E5A2BD /* Main.storyboard */,
-				CE5332B12912753800E5A2BD /* Assets.xcassets */,
-				CE5332B32912753800E5A2BD /* LaunchScreen.storyboard */,
-				CE5332B62912753800E5A2BD /* Info.plist */,
+				CE5332DB2912901500E5A2BD /* Models */,
+				CE5332D929128FDF00E5A2BD /* ViewControllers */,
+				CE5332D829128FD500E5A2BD /* Storyboards */,
+				CE5332DA29128FFC00E5A2BD /* Resources */,
 			);
 			path = "Recipe World";
 			sourceTree = "<group>";
@@ -125,6 +126,40 @@
 				CE5332CB2912753800E5A2BD /* Recipe_WorldUITestsLaunchTests.swift */,
 			);
 			path = "Recipe WorldUITests";
+			sourceTree = "<group>";
+		};
+		CE5332D829128FD500E5A2BD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE5332AE2912753500E5A2BD /* Main.storyboard */,
+				CE5332B32912753800E5A2BD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CE5332D929128FDF00E5A2BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE5332AC2912753500E5A2BD /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CE5332DA29128FFC00E5A2BD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE5332B12912753800E5A2BD /* Assets.xcassets */,
+				CE5332B62912753800E5A2BD /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE5332DB2912901500E5A2BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE5332DC2912903700E5A2BD /* Recipe.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +296,7 @@
 				CE5332AD2912753500E5A2BD /* ViewController.swift in Sources */,
 				CE5332A92912753500E5A2BD /* AppDelegate.swift in Sources */,
 				CE5332AB2912753500E5A2BD /* SceneDelegate.swift in Sources */,
+				CE5332DD2912903700E5A2BD /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
