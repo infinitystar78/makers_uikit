@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE42B09E2913AFFB00362406 /* UITextView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42B09D2913AFFB00362406 /* UITextView + Extension.swift */; };
+		CE42B0A02913B7BA00362406 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42B09F2913B7BA00362406 /* UITextField + Extension.swift */; };
 		CE5332A92912753500E5A2BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332A82912753500E5A2BD /* AppDelegate.swift */; };
 		CE5332AB2912753500E5A2BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332AA2912753500E5A2BD /* SceneDelegate.swift */; };
 		CE5332AD2912753500E5A2BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332AC2912753500E5A2BD /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE42B09D2913AFFB00362406 /* UITextView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView + Extension.swift"; sourceTree = "<group>"; };
+		CE42B09F2913B7BA00362406 /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		CE5332A52912753500E5A2BD /* Recipe World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5332A82912753500E5A2BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5332AA2912753500E5A2BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		CE53329C2912753500E5A2BD = {
 			isa = PBXGroup;
 			children = (
+				CE42B09D2913AFFB00362406 /* UITextView + Extension.swift */,
+				CE42B09F2913B7BA00362406 /* UITextField + Extension.swift */,
 				CE5332A72912753500E5A2BD /* Recipe World */,
 				CE5332BE2912753800E5A2BD /* Recipe WorldTests */,
 				CE5332C82912753800E5A2BD /* Recipe WorldUITests */,
@@ -297,6 +303,8 @@
 				CE5332A92912753500E5A2BD /* AppDelegate.swift in Sources */,
 				CE5332AB2912753500E5A2BD /* SceneDelegate.swift in Sources */,
 				CE5332DD2912903700E5A2BD /* Recipe.swift in Sources */,
+				CE42B09E2913AFFB00362406 /* UITextView + Extension.swift in Sources */,
+				CE42B0A02913B7BA00362406 /* UITextField + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

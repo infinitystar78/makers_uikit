@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum Cuisine {
+enum Cuisine: String, CaseIterable {
     case british
     case spanish
     case indian
