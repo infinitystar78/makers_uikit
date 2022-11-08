@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE23C6BF29151EB000991273 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23C6BE29151EB000991273 /* HomeViewController.swift */; };
+		CE23C6C129151ECA00991273 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23C6C029151ECA00991273 /* RecipeListViewController.swift */; };
+		CE23C6C329151EE000991273 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23C6C229151EE000991273 /* SettingsViewController.swift */; };
+		CE23C6C5291520F200991273 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE23C6C4291520F200991273 /* Login.storyboard */; };
+		CE424D4E291A79E300C60082 /* RecipeInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE424D4D291A79E300C60082 /* RecipeInputModel.swift */; };
+		CE424D50291A80C800C60082 /* RecipeInputConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE424D4F291A80C800C60082 /* RecipeInputConfigurator.swift */; };
 		CE42B09E2913AFFB00362406 /* UITextView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42B09D2913AFFB00362406 /* UITextView + Extension.swift */; };
 		CE42B0A02913B7BA00362406 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42B09F2913B7BA00362406 /* UITextField + Extension.swift */; };
 		CE5332A92912753500E5A2BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332A82912753500E5A2BD /* AppDelegate.swift */; };
 		CE5332AB2912753500E5A2BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332AA2912753500E5A2BD /* SceneDelegate.swift */; };
-		CE5332AD2912753500E5A2BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332AC2912753500E5A2BD /* ViewController.swift */; };
+		CE5332AD2912753500E5A2BD /* RecipeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5332AC2912753500E5A2BD /* RecipeInputViewController.swift */; };
 		CE5332B02912753500E5A2BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5332AE2912753500E5A2BD /* Main.storyboard */; };
 		CE5332B22912753800E5A2BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5332B12912753800E5A2BD /* Assets.xcassets */; };
 		CE5332B52912753800E5A2BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5332B32912753800E5A2BD /* LaunchScreen.storyboard */; };
@@ -39,12 +45,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE23C6BE29151EB000991273 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE23C6C029151ECA00991273 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
+		CE23C6C229151EE000991273 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CE23C6C4291520F200991273 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CE424D4D291A79E300C60082 /* RecipeInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInputModel.swift; sourceTree = "<group>"; };
+		CE424D4F291A80C800C60082 /* RecipeInputConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInputConfigurator.swift; sourceTree = "<group>"; };
 		CE42B09D2913AFFB00362406 /* UITextView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView + Extension.swift"; sourceTree = "<group>"; };
 		CE42B09F2913B7BA00362406 /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		CE5332A52912753500E5A2BD /* Recipe World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5332A82912753500E5A2BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5332AA2912753500E5A2BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE5332AC2912753500E5A2BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE5332AC2912753500E5A2BD /* RecipeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInputViewController.swift; sourceTree = "<group>"; };
 		CE5332AF2912753500E5A2BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE5332B12912753800E5A2BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5332B42912753800E5A2BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 			children = (
 				CE5332AE2912753500E5A2BD /* Main.storyboard */,
 				CE5332B32912753800E5A2BD /* LaunchScreen.storyboard */,
+				CE23C6C4291520F200991273 /* Login.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -146,7 +159,11 @@
 		CE5332D929128FDF00E5A2BD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE5332AC2912753500E5A2BD /* ViewController.swift */,
+				CE5332AC2912753500E5A2BD /* RecipeInputViewController.swift */,
+				CE424D4F291A80C800C60082 /* RecipeInputConfigurator.swift */,
+				CE23C6BE29151EB000991273 /* HomeViewController.swift */,
+				CE23C6C029151ECA00991273 /* RecipeListViewController.swift */,
+				CE23C6C229151EE000991273 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -164,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5332DC2912903700E5A2BD /* Recipe.swift */,
+				CE424D4D291A79E300C60082 /* RecipeInputModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE23C6C5291520F200991273 /* Login.storyboard in Resources */,
 				CE5332B52912753800E5A2BD /* LaunchScreen.storyboard in Resources */,
 				CE5332B22912753800E5A2BD /* Assets.xcassets in Resources */,
 				CE5332B02912753500E5A2BD /* Main.storyboard in Resources */,
@@ -299,12 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE5332AD2912753500E5A2BD /* ViewController.swift in Sources */,
+				CE424D4E291A79E300C60082 /* RecipeInputModel.swift in Sources */,
+				CE5332AD2912753500E5A2BD /* RecipeInputViewController.swift in Sources */,
 				CE5332A92912753500E5A2BD /* AppDelegate.swift in Sources */,
 				CE5332AB2912753500E5A2BD /* SceneDelegate.swift in Sources */,
 				CE5332DD2912903700E5A2BD /* Recipe.swift in Sources */,
+				CE23C6C129151ECA00991273 /* RecipeListViewController.swift in Sources */,
+				CE424D50291A80C800C60082 /* RecipeInputConfigurator.swift in Sources */,
 				CE42B09E2913AFFB00362406 /* UITextView + Extension.swift in Sources */,
+				CE23C6BF29151EB000991273 /* HomeViewController.swift in Sources */,
 				CE42B0A02913B7BA00362406 /* UITextField + Extension.swift in Sources */,
+				CE23C6C329151EE000991273 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

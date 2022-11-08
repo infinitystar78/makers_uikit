@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class RecipeInputViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     ////Outlets
     @IBOutlet var recipeImage: UIImageView!
     @IBOutlet var recipeNameLabel: UILabel!
@@ -35,21 +35,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
 
     @IBOutlet var datePicker: UIDatePicker!
 
-    ////Properties
-    var recipies: [Recipe] = []
-    var timeToCookText = String()
-    var ingredientsText = String()
-    var instructonsText = String()
-    var nutritionText = String()
-    var recipeName = String()
+    var model = RecipeInputModel()
 
-    var userRating = String()
-
-    var portionSize = Int()
-    var selectedCuisine: Cuisine = .quick
-
-    var selectedDate = Date()
-
+    // UI elements
     var toolBar = UIToolbar()
     var picker = UIPickerView()
 
@@ -102,12 +90,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
 
     @objc func ratingStepperChanged() {
         userRatingLabel.text = String(ratingStepper.value)
-        userRating = userRatingLabel.text ?? "0"
+        model.userRating = userRatingLabel.text ?? "0"
     }
 
     @objc func portionStepperChanged() {
         selectedPortionSize.text = String(portionStepper.value)
-        portionSize = Int(userRatingLabel.text ?? "1") ?? 1
+        model.portionSize = Int(userRatingLabel.text ?? "1") ?? 1
     }
 
     @objc func selectCusine() {
@@ -129,9 +117,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     }
 
     @IBAction func saveRecipe(_ sender: Any) {
-        selectedDate = datePicker.date
-
-        let newRecipe = Recipe(name: recipeName, ingredients: ingredientsText, timeToCook: timeToCookText, rating: userRating, instructions: instructonsText, photo: recipeImage.image ?? UIImage(), portionSize: portionSize, nutritionalInformation: nutritionText, cuisine: selectedCuisine, date: selectedDate)
+        model.selectedDate = datePicker.date
+        model.saveNewRecipe()
+        model.image = recipeImage.image ?? UIImage()
 
         let refreshAlert = UIAlertController(title: "Save", message: "Recipe will be saved to your recipe book.", preferredStyle: UIAlertController.Style.alert)
 
@@ -161,7 +149,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] _ in
             let textField = alert?.textFields![0]
             self.recipeNameLabel.text = textField?.text
-            self.recipeName = self.recipeNameLabel.text ?? ""
+            self.model.recipeName = self.recipeNameLabel.text ?? ""
 
         }))
         present(alert, animated: true, completion: nil)
@@ -173,7 +161,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     ////Textfield Delegate Methods
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        timeToCookText = textField.text ?? ""
+        model.timeToCookText = textField.text ?? ""
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -186,9 +174,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     func textViewDidEndEditing(_ textView: UITextView) {
         switch textView {
         case ingredientsTextView:
-            ingredientsText = textView.text ?? ""
+            model.ingredientsText = textView.text ?? ""
         case instructionsTextView:
-            instructonsText = textView.text ?? ""
+            model.instructionsText = textView.text ?? ""
         default:
             print("default.")
         }
@@ -210,7 +198,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         cuisineLabel.text = Cuisine.allCases[row].rawValue.capitalized
-        selectedCuisine = Cuisine.allCases[row]
+        model.selectedCuisine = Cuisine.allCases[row]
     }
 
     // date picker methods

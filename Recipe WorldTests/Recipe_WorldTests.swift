@@ -9,8 +9,15 @@ import XCTest
 @testable import Recipe_World
 
 final class Recipe_WorldTests: XCTestCase {
+    var sut: ViewController?
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
 
     override func setUpWithError() throws {
+        sut = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController
+        sut?.cuisineLabel
+        
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
