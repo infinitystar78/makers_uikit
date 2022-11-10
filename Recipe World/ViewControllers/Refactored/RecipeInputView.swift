@@ -1,14 +1,18 @@
 //
-//  ViewController.swift
+//  RecipeInputView.swift
 //  Recipe World
 //
-//  Created by M W on 02/11/2022.
+//  Created by M W on 09/11/2022.
 //
 
 import UIKit
 
-class RecipeInputViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-    ////Outlets
+protocol RecipeInputViewInput: AnyObject {
+}
+
+class RecipeInputView: UIView {
+    @IBOutlet var editNameButton: UIButton!
+
     @IBOutlet var recipeImage: UIImageView!
     @IBOutlet var recipeNameLabel: UILabel!
     @IBOutlet var ingredientsLabel: UILabel!
@@ -35,33 +39,39 @@ class RecipeInputViewController: UIViewController, UITextFieldDelegate, UITextVi
 
     @IBOutlet var datePicker: UIDatePicker!
 
-    var model = RecipeInputModel()
+    // communication functions
+
+    var editName: (() -> Void)?
+    var ratingStepperChangedAction: (() -> Void)?
+    var portionStepperChangedAction: (() -> Void)?
+    var instructionsTextViewInputAction: ((UITextView) -> Void)?
+    var ingredientsTextViewInputAction: (() -> Void)?
+    var cuisneAction: ((String) -> Void)?   // no parameter names in closures
+    var timeToCookAction: (() -> Void)?
 
     // UI elements
     var toolBar = UIToolbar()
     var picker = UIPickerView()
 
-    // TODO:
+    func didSetupViews() {
+        setupLabels()
+        setupSteppers()
+        setupTextViews()
+        setupTextFields()
+    }
 
-    // Portion size
-    // nutriton and allergy info
-    // cuisine
-    // date when you plan to eat it.
+    private func setupLabels() {
+        cuisineLabel.isUserInteractionEnabled = true
+        cuisineLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectCusine)))
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    private func setupTextFields() {
         timeToCookTextField.delegate = self
         timeToCookTextField.keyboardType = .numberPad
         timeToCookTextField.addDoneButtonOnKeyboard()
-
-        cuisineLabel.isUserInteractionEnabled = true
-        cuisineLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectCusine)))
-        setupSteppers()
-        setupTextViews()
     }
 
-    func setupTextViews() {
+    private func setupTextViews() {
         ingredientsTextView.delegate = self
         instructionsTextView.delegate = self
         ingredientsTextView.addDoneButton(title: "Done", target: self, selector: #selector(dismiss(sender:)))
@@ -69,7 +79,7 @@ class RecipeInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         nutritionalInformationTextView.addDoneButton(title: "Done", target: self, selector: #selector(dismiss(sender:)))
     }
 
-    func setupSteppers() {
+    private func setupSteppers() {
         ////rating Steppers
         ratingStepper.maximumValue = 0
         ratingStepper.maximumValue = 5
@@ -83,19 +93,19 @@ class RecipeInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         selectedPortionSize.text = String(portionStepper.value)
         portionStepper.addTarget(self, action: #selector(portionStepperChanged), for: .valueChanged)
     }
+}
 
+extension RecipeInputView {
     @objc func dismiss(sender: Any) {
-        view.endEditing(true)
+        endEditing(true)
     }
 
     @objc func ratingStepperChanged() {
         userRatingLabel.text = String(ratingStepper.value)
-        model.userRating = userRatingLabel.text ?? "0"
     }
 
     @objc func portionStepperChanged() {
         selectedPortionSize.text = String(portionStepper.value)
-        model.portionSize = Int(userRatingLabel.text ?? "1") ?? 1
     }
 
     @objc func selectCusine() {
@@ -107,83 +117,56 @@ class RecipeInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         picker.autoresizingMask = .flexibleWidth
         picker.contentMode = .center
         picker.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
-        view.addSubview(picker)
+        addSubview(picker)
 
         toolBar = UIToolbar(frame: CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
         toolBar.barStyle = .black
         toolBar.isTranslucent = true
         toolBar.items = [UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))]
-        view.addSubview(toolBar)
-    }
-
-    @IBAction func saveRecipe(_ sender: Any) {
-        model.selectedDate = datePicker.date
-        model.saveNewRecipe()
-        model.image = recipeImage.image ?? UIImage()
-
-        let refreshAlert = UIAlertController(title: "Save", message: "Recipe will be saved to your recipe book.", preferredStyle: UIAlertController.Style.alert)
-
-        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_: UIAlertAction!) in
-            //// save logic
-        }))
-
-        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_: UIAlertAction!) in
-            //// cancel logic
-
-        }))
-
-        present(refreshAlert, animated: true, completion: nil)
+        addSubview(toolBar)
     }
 
     @objc func onDoneButtonTapped() {
         toolBar.removeFromSuperview()
         picker.removeFromSuperview()
     }
+}
 
+extension RecipeInputView {
     @IBAction func editName(_ sender: Any) {
-        let alert = UIAlertController(title: "Recipe Name", message: "Enter a text", preferredStyle: .alert)
-        alert.addTextField { textField in
-            textField.text = "Please enter recipe"
-        }
-
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] _ in
-            let textField = alert?.textFields![0]
-            self.recipeNameLabel.text = textField?.text
-            self.model.recipeName = self.recipeNameLabel.text ?? ""
-
-        }))
-        present(alert, animated: true, completion: nil)
+        editName!()
     }
+}
 
-    @IBAction func stepperDidChange(_ sender: Any) {
-    }
-
-    ////Textfield Delegate Methods
-
+extension RecipeInputView: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        model.timeToCookText = textField.text ?? ""
+        if let timeToCookAction = timeToCookAction {
+            timeToCookAction()
+        }
+        // unwrapped
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
     }
+}
 
-    //// Textview Delegate Methods
-
+extension RecipeInputView: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         switch textView {
         case ingredientsTextView:
-            model.ingredientsText = textView.text ?? ""
+            instructionsTextViewInputAction!(textView)
+        
         case instructionsTextView:
-            model.instructionsText = textView.text ?? ""
+            instructionsTextViewInputAction!(textView)
         default:
             print("default.")
         }
     }
+}
 
-    // Picker view delegate methods
-
+extension RecipeInputView: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -198,8 +181,7 @@ class RecipeInputViewController: UIViewController, UITextFieldDelegate, UITextVi
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         cuisineLabel.text = Cuisine.allCases[row].rawValue.capitalized
-        model.selectedCuisine = Cuisine.allCases[row]
+        cuisneAction!(Cuisine.allCases[row].rawValue.capitalized)
+      
     }
-
-    // date picker methods
 }

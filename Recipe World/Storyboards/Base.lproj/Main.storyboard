@@ -34,7 +34,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="RecipeInputViewController" customModule="Recipe_World" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="RecipeInputView" customModule="Recipe_World" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -265,30 +265,34 @@
                             <constraint firstItem="jwD-DF-ntw" firstAttribute="top" secondItem="NsD-mH-bEm" secondAttribute="bottom" constant="8" symbolic="YES" id="y3a-xH-qAa"/>
                             <constraint firstItem="BCq-UQ-RAA" firstAttribute="top" secondItem="PuK-NZ-BcI" secondAttribute="bottom" constant="29" id="ypG-SB-qQt"/>
                         </constraints>
+                        <connections>
+                            <outlet property="NutirtionalInfoLabel" destination="NsD-mH-bEm" id="F3z-eC-qkg"/>
+                            <outlet property="cuisineLabel" destination="3Di-Sj-E2A" id="7jN-ND-iOs"/>
+                            <outlet property="datePicker" destination="SR4-yH-FgL" id="y1h-2D-vXp"/>
+                            <outlet property="ingredientsLabel" destination="svK-xY-HHZ" id="3bg-hF-zyu"/>
+                            <outlet property="ingredientsTextView" destination="tUh-vo-GWy" id="C30-Id-ldo"/>
+                            <outlet property="instructionsTextView" destination="Ow8-eq-90c" id="JbX-uF-USQ"/>
+                            <outlet property="nutritionalInformationTextView" destination="jwD-DF-ntw" id="vLk-LG-APO"/>
+                            <outlet property="portionSizeLabel" destination="d6P-tc-SCT" id="Pf1-FB-rmE"/>
+                            <outlet property="portionStepper" destination="oMh-Cy-F4w" id="tLj-kE-94w"/>
+                            <outlet property="ratingStepper" destination="VKn-6h-M9Z" id="yqH-ES-2Pd"/>
+                            <outlet property="ratingTitleLabel" destination="PuK-NZ-BcI" id="7VL-MN-exX"/>
+                            <outlet property="recipeImage" destination="w1P-Pi-nU6" id="s5u-ja-pFS"/>
+                            <outlet property="recipeNameLabel" destination="1VB-Hp-u1A" id="81D-0u-4SZ"/>
+                            <outlet property="selectedPortionSize" destination="4rg-e4-OaK" id="DR6-WC-ZNv"/>
+                            <outlet property="timeToCookLabel" destination="GvG-il-S8r" id="TcB-X8-HQJ"/>
+                            <outlet property="timeToCookTextField" destination="Rwp-Yw-31D" id="d16-QY-pQq"/>
+                            <outlet property="userRatingLabel" destination="dss-2s-GRG" id="cvv-Te-OmT"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="BJA-6w-oCa"/>
                     <connections>
-                        <outlet property="NutirtionalInfoLabel" destination="NsD-mH-bEm" id="EhD-kf-P2O"/>
-                        <outlet property="cuisineLabel" destination="3Di-Sj-E2A" id="kAD-Bo-Fti"/>
-                        <outlet property="datePicker" destination="SR4-yH-FgL" id="F7g-I0-4GF"/>
-                        <outlet property="ingredientsLabel" destination="svK-xY-HHZ" id="T4W-aY-4J5"/>
-                        <outlet property="ingredientsTextView" destination="tUh-vo-GWy" id="Or5-4t-v59"/>
-                        <outlet property="nutritionalInformationTextView" destination="jwD-DF-ntw" id="fHx-8K-uYU"/>
-                        <outlet property="portionSizeLabel" destination="d6P-tc-SCT" id="U8K-AM-eV3"/>
-                        <outlet property="portionStepper" destination="oMh-Cy-F4w" id="q3T-UJ-Ucg"/>
-                        <outlet property="ratingStepper" destination="VKn-6h-M9Z" id="Jk7-RE-p1I"/>
-                        <outlet property="ratingTitleLabel" destination="PuK-NZ-BcI" id="wSR-wB-hVt"/>
-                        <outlet property="recipeImage" destination="w1P-Pi-nU6" id="7rs-Qr-FZr"/>
-                        <outlet property="recipeNameLabel" destination="1VB-Hp-u1A" id="tDF-st-rhE"/>
-                        <outlet property="selectedPortionSize" destination="4rg-e4-OaK" id="D0Y-8I-mM2"/>
-                        <outlet property="timeToCookLabel" destination="GvG-il-S8r" id="uoj-gz-0eY"/>
-                        <outlet property="timeToCookTextField" destination="Rwp-Yw-31D" id="TaO-1y-BtD"/>
-                        <outlet property="userRatingLabel" destination="dss-2s-GRG" id="5Q3-cN-SLs"/>
+                        <outlet property="recipeInputView" destination="8bC-Xf-vdC" id="Tdx-zA-4H8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="-507"/>
+            <point key="canvasLocation" x="195" y="-481"/>
         </scene>
         <!--Item-->
         <scene sceneID="7K1-un-UHd">
